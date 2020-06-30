@@ -3,7 +3,7 @@ Counter App Picture
 ![Counter App Picture](https://github.com/tsuiswz/counter-app/blob/master/counter-app%20sample%20pic.png)
 
 New look with React Router links (June 30 2020):
-![Counter App Picture](https://github.com/tsuiswz/counter-app/blob/master/counter-app%20sample%20pic.png)
+![Counter App Picture](https://github.com/tsuiswz/counter-app/blob/master/counterappjune302020.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
