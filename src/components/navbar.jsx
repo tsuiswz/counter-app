@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import logo from './logo192.png';
 
 // Stateless Functional Component
 const NavBar = ({ totalCounters }) => {
@@ -6,12 +8,23 @@ const NavBar = ({ totalCounters }) => {
 
   return (
     <nav className="navbar navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        Navbar{" "}
-        <span className="badge badge-pill badge-secondary">
-          {totalCounters}
-        </span>
-      </a>
+      <ul className="nav-links">
+        <Link to="/">
+          <img src={logo} alt="Logo" width="20" height="20" />
+          <span className="badge badge-pill badge-secondary">
+            {totalCounters}
+          </span>
+        </Link>
+        <Link to="/about">
+          <li>About</li>
+        </Link>
+        <Link to="/shop">
+          <li>Shop</li>
+        </Link>
+        <Link to="/cart">
+          <li>Cart</li>
+        </Link>
+      </ul>
     </nav>
   );
 };

@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import NavBar from "./components/navbar";
-import Counters from "./components/counters";
 import "./App.css";
+import Home from "./components/home";
+import About from "./components/about";
+import Shop from "./components/shop";
+import Cart from "./components/cart";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -59,20 +63,29 @@ class App extends Component {
   render() {
     console.log("App - Rendered");
     return (
-      <React.Fragment>
-        <NavBar
-          totalCounters={this.state.counters.filter((c) => c.value > 0).length}
-        />
-        <main className="container">
-          <Counters
-            onReset={this.handleReset}
-            onIncrement={this.handleIncrement}
-            onDecrement={this.handleDecrement}
-            onDelete={this.handleDelete}
-            counters={this.state.counters}
+      <Router>
+        <div className="App">
+          <NavBar
+            totalCounters={
+              this.state.counters.filter((c) => c.value > 0).length
+            }
           />
-        </main>
-      </React.Fragment>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/shop" component={Shop} />
+            <Route path="/cart">
+              <Cart
+                onReset={this.handleReset}
+                onIncrement={this.handleIncrement}
+                onDecrement={this.handleDecrement}
+                onDelete={this.handleDelete}
+                counters={this.state.counters}
+              />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
